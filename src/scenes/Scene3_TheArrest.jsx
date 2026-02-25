@@ -7,60 +7,70 @@ export default function Scene3_TheArrest({ scenario }) {
   return (
     <Scene number={3} title="The Arrest" time="10:35 PM" elapsed="+48 min" scenario={scenario}>
       <p>
-        Forty minutes later, the copper theft suspicion doesn't pan out. Carlos pulls up photos on
-        his phone showing the materials at the job site. The restaurant owner confirms by phone
-        that Carlos was there doing legitimate work.
+        Forty minutes later, the copper theft suspicion is cleared. Carlos found the photos on his
+        phone — the cooler unit, the job site, timestamps. The restaurant owner answered on the
+        second ring. <em>"Yeah, that's my guy. He was here all evening."</em>
       </p>
       <p>
-        But during a more thorough search of the van, the deputy found something else: a small
-        amount of marijuana in Carlos's coat pocket, forgotten from weeks ago when a friend gave it
-        to him at a barbecue.
+        But during the more thorough search of the van, the deputy found something in the pocket
+        of Carlos's work jacket: a small amount of marijuana — maybe a gram, in a crumpled plastic
+        bag. Carlos barely remembers it. A friend handed it to him at a barbecue three weeks ago.
+        He forgot it was there.
       </p>
       <p>
-        In this state, possession of a small amount of marijuana is still a{' '}
+        In this state, possession of any amount of marijuana is still a{' '}
         <Tooltip term="misdemeanor">
-          A minor criminal offense, typically punishable by fines, probation, or less than one year
-          in jail. Misdemeanors are less serious than felonies but still create a criminal record.
+          A minor criminal offense, typically punishable by fines, probation, or up to one year in
+          jail. Misdemeanors are less serious than felonies but still generate a criminal record
+          and — crucially — can trigger immigration consequences for non-citizens.
         </Tooltip>
         .
       </p>
 
       <Dialogue speaker="Deputy">
         Sir, I'm placing you under arrest for possession of a controlled substance. You have the
-        right to remain silent...
+        right to remain silent. Anything you say can and will be used against you...
       </Dialogue>
 
-      <p>Carlos is handcuffed, read his rights, and transported to the county jail.</p>
+      <p>
+        Carlos is handcuffed. The cuffs click. He's guided into the back of the cruiser. His work
+        van stays on the shoulder of the road.
+      </p>
 
       <ScenarioContent
         scenario={scenario}
         none={
           <p>
-            In the patrol car, Carlos is thinking about bail, about calling his wife, about whether
-            he'll make it to his daughter's school play tomorrow. Immigration is not on his mind.
-            Why would it be? He's had a green card for over two decades.
+            In the back of the patrol car, Carlos runs the math. Misdemeanor possession —
+            first offense, small amount. He'll call the bail bondsman. Elena can come in the
+            morning. If he's out by 9 AM, he can still make Sofia's play on Thursday. He keeps
+            telling himself: <em>this is fixable.</em> Immigration is not on his mind. Why would
+            it be? He's had a green card for over two decades.
           </p>
         }
         jem={
           <p>
-            In the patrol car, Carlos is thinking about bail, about calling his wife, about whether
-            he'll make it to his daughter's school play tomorrow. He doesn't know that what happens
-            next at the jail will be different here than in neighboring counties.
+            In the back of the patrol car, Carlos runs the math. Misdemeanor possession —
+            first offense, small amount. He'll call the bail bondsman. Elena can come in the
+            morning. He should make Sofia's play on Thursday. He tells himself it's fixable. He
+            doesn't know that what happens next at the jail will be different here than in the
+            county twenty minutes west.
           </p>
         }
         tfm={
           <>
             <p>
-              In the patrol car, the deputy is already filling out paperwork. One of the boxes on
-              his arrest form, added after the county joined the Task Force program, reads:{' '}
-              <em>"Immigration status, if known."</em>
+              In the patrol car, the deputy fills out the arrest report. Near the bottom is a
+              field added to the form after the county joined the Task Force program:
             </p>
+            <div className="my-3 p-3 bg-red-50 border border-red-200 rounded font-mono text-sm text-slate-700">
+              Immigration status, if known: <strong>LPR — verified via DHS IDENT query at scene</strong>
+            </div>
             <p>
-              He writes: <strong>LPR - verified via IDENT query at scene.</strong>
-            </p>
-            <p>
-              Carlos stares out the window, wondering if his green card status will somehow make
-              this worse. He's heard stories.
+              Carlos stares out the window at the dark road. He's thinking about Sofia's play.
+              He's also thinking about the question — <em>"where were you born?"</em> — and what
+              it means that the deputy ran a query he's never had run on him before. He's heard
+              things about this county. He hopes they're not true.
             </p>
           </>
         }

@@ -30,29 +30,87 @@ function App() {
       <ScenarioSelector scenario={scenario} setScenario={setScenario} />
 
       <main className="max-w-3xl mx-auto px-4 py-8">
+
+        {/* Program Context */}
+        <div className="mb-8 p-6 bg-slate-900 text-white rounded-xl">
+          <div className="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-2">
+            About this program
+          </div>
+          <h2 className="font-bold text-xl text-white mb-4">What is 287(g)?</h2>
+          <p className="text-slate-300 text-sm leading-relaxed mb-3">
+            Section 287(g) of the Immigration and Nationality Act authorizes the Department of
+            Homeland Security to partner with state and local law enforcement agencies, granting
+            their officers authority to perform immigration enforcement functions — including
+            querying federal immigration databases, lodging detainer requests against people who've
+            been arrested, and initiating deportation proceedings.
+          </p>
+          <p className="text-slate-300 text-sm leading-relaxed mb-5">
+            Today, more than 1,400 law enforcement agencies operate under active 287(g) agreements
+            — a number that has grown dramatically since 2023. The program's effects vary
+            significantly depending on which type of agreement a county has signed. The same
+            encounter with police can lead to radically different outcomes depending on your
+            county's agreement.
+          </p>
+          <div className="grid grid-cols-2 gap-3 mb-5">
+            <div className="bg-slate-800 rounded-lg p-4">
+              <div className="text-3xl font-extrabold text-amber-400 mb-1">1,400+</div>
+              <div className="text-xs text-slate-400 leading-snug">Active 287(g) agreements nationwide</div>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-4">
+              <div className="text-3xl font-extrabold text-amber-400 mb-1">2</div>
+              <div className="text-xs text-slate-400 leading-snug">Agreement types simulated below: Jail Enforcement &amp; Task Force</div>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-4 border-t border-slate-700 pt-4">
+            <a
+              href="https://lookerstudio.google.com/reporting/ebe8be08-53be-4afc-9240-83ec3075e873"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-amber-400 hover:text-amber-300 transition-colors"
+            >
+              View our full 287(g) data report →
+            </a>
+            <a
+              href="https://maxwellcommons.substack.com/p/287g-program"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-amber-400 hover:text-amber-300 transition-colors"
+            >
+              Read our newsletter coverage →
+            </a>
+          </div>
+        </div>
+
         {/* Introduction */}
         <div className="mb-8 p-6 bg-white rounded-xl border border-slate-200">
-          <h3 className="font-bold text-slate-800 mb-3">Meet Carlos</h3>
+          <h3 className="font-bold text-slate-800 mb-4">Meet Carlos Mendez</h3>
           <div className="flex gap-4">
-            <div className="w-16 h-16 bg-slate-200 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center flex-shrink-0 border-2 border-slate-200">
               <svg className="w-8 h-8 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
               </svg>
             </div>
-            <div className="text-slate-700">
-              <p className="mb-2">
-                <strong>Carlos Mendez</strong>, 34, is an HVAC technician. He's a{' '}
+            <div className="text-slate-700 space-y-2 text-sm">
+              <p>
+                <strong className="text-base text-slate-900">Carlos Mendez, 34</strong>, is a
+                self-employed HVAC technician who has lived in this county for 12 years. He's a{' '}
                 <Tooltip term="lawful permanent resident">
                   A green card holder. Carlos has legal status to live and work in the U.S.
-                  permanently, but he is not a citizen and can still be deported for certain
-                  offenses.
+                  permanently, but he is not a citizen and can be deported for certain offenses —
+                  including some misdemeanors.
                 </Tooltip>{' '}
-                who has lived in this county for 12 years. He's married with two U.S. citizen
-                children, ages 7 and 4.
+                — he came from Mexico as a teenager, and has been in the U.S. for over 22 years.
+                He built his HVAC client list over a decade of work in this county.
               </p>
-              <p className="text-slate-600">
-                Tonight, he's driving home from an emergency repair call. His left brake light is
-                out. He doesn't know.
+              <p>
+                He's married to Elena, a U.S. citizen. They have two children: Sofia, 7, and
+                Miguel, 4. Both were born here. Sofia has a school play on Thursday. Carlos
+                promised he wouldn't miss it.
+              </p>
+              <p className="text-slate-500 italic border-l-2 border-slate-200 pl-3">
+                Tonight is a Tuesday in November. Carlos is driving home after a 14-hour emergency
+                call — a restaurant's walk-in cooler went down. His left brake light is out. He
+                doesn't know.
               </p>
             </div>
           </div>
@@ -81,21 +139,36 @@ function App() {
           <h4 className="font-bold text-slate-700 mb-3">Sources & Methodology</h4>
           <p className="text-sm text-slate-600 mb-4">
             This interactive depicts fictional events, but the procedures shown are based on
-            documented 287(g) program operations, ICE memoranda of agreement, legal research, and
-            investigative reporting.
+            documented 287(g) program operations, ICE memoranda of agreement, court records,
+            legal research, and investigative reporting. Carlos Mendez is a composite character;
+            his story reflects documented real-world cases.
           </p>
           <div className="text-sm text-slate-500 space-y-1">
-            <div>• ICE 287(g) Program Overview and MOA Templates</div>
+            <div>• ICE 287(g) Program Overview and Memoranda of Agreement templates</div>
             <div>• American Immigration Council, "The 287(g) Program: An Overview"</div>
-            <div>• ACLU, "License to Abuse" (2022)</div>
-            <div>• Migration Policy Institute analysis of federal-local partnerships</div>
-            <div>• State-specific legal opinions (MN, WI) on 287(g) authority</div>
+            <div>• ACLU, "License to Abuse: How ICE's 287(g) Program Empowers Racist Policing" (2022)</div>
+            <div>• Migration Policy Institute analysis of federal-local enforcement partnerships</div>
+            <div>• Immigrant Legal Resource Center, "The Immigration Detainer Problem" (2021)</div>
+            <div>• State-specific legal opinions (MN, WI, OR) on 287(g) authority and detainer compliance</div>
           </div>
-          <p className="text-sm text-slate-500 mt-4">
-            <a href="#" className="text-blue-600 hover:underline">
+          <div className="mt-5 flex flex-wrap gap-4">
+            <a
+              href="https://lookerstudio.google.com/reporting/ebe8be08-53be-4afc-9240-83ec3075e873"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-blue-600 hover:underline"
+            >
               View our full 287(g) data report →
             </a>
-          </p>
+            <a
+              href="https://maxwellcommons.substack.com/p/287g-program"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-blue-600 hover:underline"
+            >
+              Read our newsletter coverage →
+            </a>
+          </div>
         </footer>
       </main>
     </div>

@@ -136,54 +136,69 @@ export default function OutcomesComparison() {
             <div className="flex items-start gap-2">
               <span className="text-red-600 font-bold mt-1">⚠</span>
               <div className="text-sm">
-                <div className="font-medium text-slate-800">During stop:</div>
-                <div className="text-slate-600">Immigration status queried</div>
+                <div className="font-medium text-slate-800">Tues, 9:47 PM:</div>
+                <div className="text-slate-600">Immigration queried at roadside stop</div>
               </div>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-red-600 font-bold mt-1">⚠</span>
               <div className="text-sm">
-                <div className="font-medium text-slate-800">Before booking:</div>
-                <div className="text-slate-600">ICE auto-notified</div>
+                <div className="font-medium text-slate-800">Tues, ~11 PM:</div>
+                <div className="text-slate-600">ICE notified; detainer lodged before booking</div>
               </div>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-red-600 font-bold mt-1">⚠</span>
               <div className="text-sm">
                 <div className="font-medium text-slate-800">Wed, 7:15 AM:</div>
-                <div className="text-slate-600">Detainer already lodged</div>
+                <div className="text-slate-600">Elena told bail isn't an option</div>
               </div>
             </div>
             <div className="flex items-start gap-2">
               <span className="text-red-600 font-bold mt-1">⚠</span>
               <div className="text-sm">
-                <div className="font-medium text-slate-800">Same as JEM:</div>
-                <div className="text-slate-600">Less time to prepare</div>
+                <div className="font-medium text-slate-800">Friday, 9 AM:</div>
+                <div className="text-slate-600">Transferred 200 mi to ICE detention</div>
+              </div>
+            </div>
+            <div className="flex items-start gap-2">
+              <span className="text-green-600 font-bold mt-1">✓</span>
+              <div className="text-sm">
+                <div className="font-medium text-slate-800">18 months later:</div>
+                <div className="text-slate-600">LPR status preserved by immigration judge</div>
               </div>
             </div>
             <div className="pt-3 border-t border-red-200">
               <div className="text-xs text-slate-500 uppercase tracking-wide mb-1">Total impact</div>
               <div className="text-lg font-bold text-red-700">94+ days in custody</div>
-              <div className="text-sm text-slate-600">$28,000+ legal fees</div>
-              <div className="text-sm text-slate-600">Lost job, separation</div>
-              <div className="text-sm text-slate-600">Community mistrust</div>
+              <div className="text-sm text-slate-600">$28,000+ legal fees and lost income</div>
+              <div className="text-sm text-slate-600">Lost client base, family separated</div>
+              <div className="text-sm text-slate-600">Community fear, prolonged uncertainty</div>
             </div>
           </div>
         </div>
       </div>
 
       <div className="mt-8 p-6 bg-slate-800 text-white rounded-xl">
-        <h3 className="text-xl font-bold mb-3">The Key Takeaway</h3>
+        <h3 className="text-xl font-bold mb-3">The same person. Three completely different outcomes.</h3>
         <p className="text-slate-200 mb-3">
-          Carlos was a <strong>lawful permanent resident</strong> with no criminal history. The
-          only reason he entered the immigration enforcement system was that he was booked into a
-          jail that participates in 287(g).
+          Carlos was a <strong>lawful permanent resident</strong> with no criminal history and no
+          immigration violations. The only reason he entered the immigration enforcement system was
+          that he was arrested in a county that participates in 287(g). His green card, his 22
+          years in this country, his U.S. citizen children — none of it prevented it.
         </p>
-        <p className="text-slate-200">
-          In a neighboring county without an agreement, his brake light ticket would have ended
-          with a fine and community service. Instead, he spent three months in detention, lost his
-          job, and his children experienced the trauma of their father being taken away.
+        <p className="text-slate-300 text-sm mb-4">
+          Whether his story ends at 8 hours or at 94 days in detention depends not on what he did
+          — but on which county he happened to be driving through when his brake light went out.
         </p>
+        <a
+          href="https://lookerstudio.google.com/reporting/ebe8be08-53be-4afc-9240-83ec3075e873"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-amber-400 hover:text-amber-300 text-sm transition-colors"
+        >
+          Explore our data on 1,400+ active 287(g) agreements →
+        </a>
       </div>
     </div>
   );

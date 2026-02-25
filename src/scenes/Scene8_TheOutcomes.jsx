@@ -33,15 +33,17 @@ export default function Scene8_TheOutcomes({ scenario }) {
       title: 'Task Force Model',
       color: 'red',
       timeline: [
-        { icon: '⚠', time: 'During the stop', detail: 'Immigration status queried at roadside', color: 'red' },
-        { icon: '⚠', time: 'Before booking complete', detail: 'ICE automatically notified, detainer lodged', color: 'red' },
-        { icon: '⚠', time: 'Wednesday, 7:15 AM', detail: 'Wife told about immigration hold immediately', color: 'red' },
-        { icon: '⚠', time: 'Same outcome as JEM', detail: 'But family had less time to prepare. Enforcement started earlier in the process.', color: 'red' }
+        { icon: '⚠', time: 'Tuesday, 9:47 PM', detail: 'Immigration queried at roadside during traffic stop', color: 'red' },
+        { icon: '⚠', time: 'Tuesday, ~11:00 PM', detail: 'ICE notified before booking complete; detainer lodged overnight', color: 'red' },
+        { icon: '⚠', time: 'Wednesday, 7:15 AM', detail: 'Elena arrives with bail. Told Carlos can\'t be released.', color: 'red' },
+        { icon: '⚠', time: 'Friday, 9:00 AM', detail: 'Transferred 200 miles to immigration detention facility', color: 'red' },
+        { icon: '⚠', time: 'Three months later', detail: 'Released on immigration bond after prolonged detention', color: 'amber' },
+        { icon: '✓', time: '18 months later', detail: 'Immigration judge allows him to remain; long-term LPR status preserved', color: 'green' }
       ],
       impact: {
         custody: '94+ days in custody',
-        cost: '$28,000+ in legal fees',
-        other: ['Lost job, family separation', 'Community fear/mistrust']
+        cost: '$28,000+ in legal fees and lost income',
+        other: ['Lost HVAC client base', 'Family separation during proceedings', 'Children\'s school and routine disrupted', 'Community fear among immigrant neighbors']
       }
     }
   };
@@ -95,11 +97,16 @@ export default function Scene8_TheOutcomes({ scenario }) {
         </div>
 
         {scenario !== 'none' && (
-          <div className="mt-6 p-4 bg-slate-800 text-white rounded-lg">
+          <div className="mt-6 p-4 bg-slate-800 text-white rounded-lg space-y-2">
             <p className="text-sm text-slate-200">
-              Carlos was a <strong>lawful permanent resident</strong> with no criminal history.
-              In a neighboring county without a 287(g) agreement, his brake light ticket would have ended
-              with a fine and community service.
+              Carlos was a <strong>lawful permanent resident</strong> with no prior criminal record
+              and no immigration violations. The only reason he entered the immigration enforcement
+              system was that he was arrested in a county that participates in 287(g).
+            </p>
+            <p className="text-sm text-slate-400">
+              In a neighboring county without an agreement, his brake light stop would have ended
+              with a warning. The marijuana would have meant a fine and community service. He would
+              have made his daughter's school play.
             </p>
           </div>
         )}
