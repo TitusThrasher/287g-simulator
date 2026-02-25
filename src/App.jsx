@@ -5,6 +5,8 @@ import ContentWarning from './components/ContentWarning';
 import Tooltip from './components/Tooltip';
 import OutcomesComparison from './components/OutcomesComparison';
 import ProgressDots from './components/ProgressDots';
+import ModelComparison from './components/ModelComparison';
+import ScenarioBriefing from './components/ScenarioBriefing';
 
 // Scene imports
 import Scene1_TheStop from './scenes/Scene1_TheStop';
@@ -39,17 +41,16 @@ function App() {
           <h2 className="font-bold text-xl text-white mb-4">What is 287(g)?</h2>
           <p className="text-slate-300 text-sm leading-relaxed mb-3">
             Section 287(g) of the Immigration and Nationality Act authorizes the Department of
-            Homeland Security to partner with state and local law enforcement agencies, granting
-            their officers authority to perform immigration enforcement functions — including
-            querying federal immigration databases, lodging detainer requests against people who've
-            been arrested, and initiating deportation proceedings.
+            Homeland Security and its component agency, Immigration and Customs Enforcement (ICE), to partner with state and local law enforcement agencies. 
+            These agreements give participating officers the authority to perform immigration enforcement functions — including
+            querying federal immigration databases, processing ICE detainer requests against people who've
+            been arrested, and even making arrests for suspected immigration violations during routine police work.
           </p>
           <p className="text-slate-300 text-sm leading-relaxed mb-5">
-            Today, more than 1,400 law enforcement agencies operate under active 287(g) agreements
-            — a number that has grown dramatically since 2023. The program's effects vary
-            significantly depending on which type of agreement a county has signed. The same
-            encounter with police can lead to radically different outcomes depending on your
-            county's agreement.
+            Today, more than 1,200 law enforcement agencies participate in the program across 1,400+ active 287(g) agreements
+            — a massive increase since January 2025, when less than 140 agreements were active. The program's scope, and impact, can vary
+            significantly depending on which type of agreement (or agreements) an agency has signed. The same
+            encounter with police can lead to very different outcomes depending on the type of agreement(s) in place.
           </p>
           <div className="grid grid-cols-2 gap-3 mb-5">
             <div className="bg-slate-800 rounded-lg p-4">
@@ -61,7 +62,10 @@ function App() {
               <div className="text-xs text-slate-400 leading-snug">Agreement types simulated below: Jail Enforcement &amp; Task Force</div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-4 border-t border-slate-700 pt-4">
+          {/* Visual comparison table: JEM vs TFM vs None */}
+          <ModelComparison />
+
+          <div className="flex flex-wrap gap-4 border-t border-slate-700 pt-4 mt-5">
             <a
               href="https://lookerstudio.google.com/reporting/ebe8be08-53be-4afc-9240-83ec3075e873"
               target="_blank"
@@ -115,6 +119,9 @@ function App() {
             </div>
           </div>
         </div>
+
+        {/* Scenario orientation — what to watch for */}
+        <ScenarioBriefing scenario={scenario} />
 
         {/* Progress indicator */}
         <ProgressDots scenario={scenario} />
