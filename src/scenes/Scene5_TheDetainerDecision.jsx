@@ -92,7 +92,7 @@ function DetainerFormMockup() {
 }
 
 export default function Scene5_TheDetainerDecision({ scenario }) {
-  if (scenario === 'none') return null;
+  if (scenario === 'none' || scenario === 'citizen') return null;
 
   return (
     <Scene number={5} title="The Detainer Decision" time="6:30 AM" elapsed="(next morning)" scenario={scenario}>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import ScenarioSelector from './components/ScenarioSelector';
 import ContentWarning from './components/ContentWarning';
@@ -7,6 +7,7 @@ import OutcomesComparison from './components/OutcomesComparison';
 import ProgressDots from './components/ProgressDots';
 import ModelComparison from './components/ModelComparison';
 import ScenarioBriefing from './components/ScenarioBriefing';
+import RemovalProceedings from './components/RemovalProceedings';
 
 // Scene imports
 import Scene1_TheStop from './scenes/Scene1_TheStop';
@@ -21,6 +22,20 @@ import Scene8_TheOutcomes from './scenes/Scene8_TheOutcomes';
 function App() {
   const [scenario, setScenario] = useState('none');
   const [showContentWarning, setShowContentWarning] = useState(true);
+  const [hasSeenEnd, setHasSeenEnd] = useState(false);
+  const endSentinelRef = useRef(null);
+
+  // Unlock the citizen scenario tab once the user scrolls through the outcome section
+  useEffect(() => {
+    const node = endSentinelRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setHasSeenEnd(true); },
+      { threshold: 0.1 }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   if (showContentWarning) {
     return <ContentWarning onContinue={() => setShowContentWarning(false)} />;
@@ -29,7 +44,7 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Header />
-      <ScenarioSelector scenario={scenario} setScenario={setScenario} />
+      <ScenarioSelector scenario={scenario} setScenario={setScenario} hasSeenEnd={hasSeenEnd} />
 
       <main className="max-w-3xl mx-auto px-4 py-8">
 
@@ -137,6 +152,12 @@ function App() {
 
         {/* Outcome - specific to current scenario */}
         <Scene8_TheOutcomes scenario={scenario} />
+
+        {/* Sentinel: becomes visible when user has read through a full scenario */}
+        <div ref={endSentinelRef} />
+
+        {/* Removal proceedings — shown for JEM and TFM after the outcome */}
+        <RemovalProceedings scenario={scenario} />
 
         {/* Comparison view - all three scenarios side-by-side */}
         <OutcomesComparison />

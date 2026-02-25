@@ -4,7 +4,7 @@ import StatCallout from '../components/StatCallout';
 
 export default function Scene7_TheTransfer({ scenario }) {
   // Only show for scenarios with detainer
-  if (scenario === 'none') {
+  if (scenario === 'none' || scenario === 'citizen') {
     return null;
   }
 

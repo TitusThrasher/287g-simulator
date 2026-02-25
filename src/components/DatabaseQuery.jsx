@@ -33,6 +33,12 @@ export default function DatabaseQuery({ scenario, stage }) {
       { db: 'NCIC', status: 'checked', result: 'No warrants' },
       { db: 'DHS IDENT', status: 'checking', result: 'LPR - Green Card' },
       { db: 'ICE Database', status: 'checking', result: 'No prior encounters' }
+    ],
+    citizen: [
+      { db: 'State DMV', status: 'checked', result: 'Valid license' },
+      { db: 'NCIC', status: 'checked', result: 'No warrants' },
+      { db: 'DHS IDENT', status: 'checking', result: 'U.S. Citizen (Naturalized 2018)' },
+      { db: 'ICE Database', status: 'checked', result: 'No enforcement interest' }
     ]
   };
 
@@ -58,10 +64,12 @@ export default function DatabaseQuery({ scenario, stage }) {
           </span>
         </div>
       ))}
-      {(scenario === 'tfm' || (scenario === 'jem' && stage === 'booking')) && (
-        <div className="mt-3 pt-3 border-t border-slate-700 text-amber-400">
-          ⚠ Immigration databases accessed under 287(g){' '}
-          {scenario === 'tfm' ? 'Task Force' : 'Jail Enforcement'} authority
+      {(scenario === 'tfm' || scenario === 'citizen' || (scenario === 'jem' && stage === 'booking')) && (
+        <div className={`mt-3 pt-3 border-t border-slate-700 ${scenario === 'citizen' ? 'text-indigo-400' : 'text-amber-400'}`}>
+          {scenario === 'citizen'
+            ? '◉ Immigration database queried — returned: U.S. Citizen. No ICE action.'
+            : `⚠ Immigration databases accessed under 287(g) ${scenario === 'tfm' ? 'Task Force' : 'Jail Enforcement'} authority`
+          }
         </div>
       )}
     </div>

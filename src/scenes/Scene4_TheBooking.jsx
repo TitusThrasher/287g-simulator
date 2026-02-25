@@ -62,10 +62,30 @@ function BookingStepFlow({ scenario }) {
         resultColor: 'text-red-800 bg-red-50',
       },
     ],
+    citizen: [
+      {
+        label: "Deputy's IDENT query already on file — logged at the roadside",
+        sub: 'Result: U.S. Citizen (Naturalized 2018)',
+        result: '✓  No ICE forwarding. No 287(g) immigration review.',
+        resultColor: 'text-green-700 bg-green-50',
+      },
+      {
+        label: 'Criminal booking proceeds normally',
+        sub: 'FBI fingerprint check — no criminal record',
+        result: '✓  No warrants. No prior arrests.',
+        resultColor: 'text-green-700 bg-green-50',
+      },
+      {
+        label: 'Bail set. Elena notified.',
+        sub: 'No immigration hold. Standard processing.',
+        result: '✓  Released at 7:15 AM.',
+        resultColor: 'text-green-700 bg-green-50',
+      },
+    ],
   };
 
-  const dotColor  = { none: 'bg-slate-500',  jem: 'bg-amber-500', tfm: 'bg-red-500'  };
-  const lineColor = { none: 'bg-slate-200',  jem: 'bg-amber-200', tfm: 'bg-red-200'  };
+  const dotColor  = { none: 'bg-slate-500', jem: 'bg-amber-500', tfm: 'bg-red-500', citizen: 'bg-indigo-500' };
+  const lineColor = { none: 'bg-slate-200', jem: 'bg-amber-200', tfm: 'bg-red-200', citizen: 'bg-indigo-200' };
 
   return (
     <div>
@@ -130,6 +150,22 @@ function BookingStepFlow({ scenario }) {
           </p>
           <p className="text-red-600 text-xs mt-2 italic">
             "There's an immigration hold. You'll need to talk to ICE."
+          </p>
+        </div>
+      )}
+
+      {scenario === 'citizen' && (
+        <div className="mt-2 p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
+          <div className="font-medium text-indigo-800 mb-2">What happens next</div>
+          <div className="flex justify-center my-2">
+            <StatCallout number="8 hrs" label="Total Time in Custody" color="indigo" size="sm" />
+          </div>
+          <p className="text-indigo-700 text-sm text-center mt-1">
+            Carlos is held overnight. Elena arrives with bail at 7:15 AM. He goes home.
+          </p>
+          <p className="text-indigo-600 text-xs mt-2 text-center">
+            The citizenship the database confirmed at the roadside meant no immigration machinery
+            engaged — even in a Task Force county.
           </p>
         </div>
       )}

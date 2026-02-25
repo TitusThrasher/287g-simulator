@@ -60,6 +60,21 @@ export default function Scene2_TheSearch({ scenario }) {
             <p>He examines the toolbox more thoroughly than he otherwise might have.</p>
           </>
         }
+        citizen={
+          <>
+            <p>
+              The IDENT returned "U.S. Citizen." But the deputy had already run it — already
+              entered Carlos's name into a federal immigration database because of a Spanish last
+              name on a dark road. The database resolved the question. The question was still asked.
+            </p>
+            <p>
+              Research on Task Force jurisdictions consistently finds that Latino drivers are
+              stopped and searched at higher rates than white drivers, regardless of what the
+              databases return. The deputy examines the toolbox more thoroughly than he otherwise
+              might have.
+            </p>
+          </>
+        }
       />
 
       <p>The deputy makes a decision.</p>

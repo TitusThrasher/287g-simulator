@@ -14,7 +14,7 @@ export default function Scene6_TheHold({ scenario }) {
   }, [scenario]); // Reset when switching between JEM and TFM
 
   // Only show for JEM and TFM scenarios (not 'none')
-  if (scenario === 'none') {
+  if (scenario === 'none' || scenario === 'citizen') {
     return null;
   }
 

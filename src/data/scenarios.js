@@ -28,5 +28,15 @@ export const scenarios = {
     textColor: 'text-red-800',
     accentColor: 'bg-red-500',
     description: 'Officers enforce immigration law on patrol'
+  },
+  citizen: {
+    id: 'citizen',
+    label: 'U.S. Citizen',
+    color: 'indigo',
+    bgColor: 'bg-indigo-50',
+    borderColor: 'border-indigo-400',
+    textColor: 'text-indigo-800',
+    accentColor: 'bg-indigo-500',
+    description: 'Same county, same deputy — but the database says "citizen"'
   }
 };

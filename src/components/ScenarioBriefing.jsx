@@ -8,23 +8,30 @@ const briefings = {
   none: {
     description:
       'In this county, Carlos moves through the standard criminal justice process. ' +
-      'His immigration status is never queried — not during the stop, not at the jail.',
+      'He isn\'t asked about his immigration status — not during the traffic stop, or at the county jail.',
     divergesAt: null,
     icon: '✓',
   },
   jem: {
     description:
-      'This county runs immigration screenings on everyone booked into the jail overnight. ' +
-      'The traffic stop looks the same — the difference begins after Carlos is processed.',
+      'This county runs each person booked into the jail through federal immigration databases. ' +
+      'The traffic stop looks the same — the difference begins <i>after</i> Carlos is processed.',
     divergesAt: 'Scene 4 — The Booking',
     icon: '⚠',
   },
   tfm: {
     description:
-      'Deputies here are cross-trained by ICE and authorized to query immigration databases ' +
-      'during routine patrol stops — before any arrest is made.',
+      'In this county, deputies train with ICE and are authorized to use ICE databases ' +
+      'during routine patrol stops — <b>before any arrest is made.</b>',
     divergesAt: 'Scene 1 — The Stop',
     icon: '⚑',
+  },
+  citizen: {
+    description:
+      'Same Task Force county. Same deputy. Same IDENT query at the roadside — but it returns ' +
+      '"U.S. Citizen." Carlos goes home in the morning. The question is what the stop itself reveals.',
+    divergesAt: 'Scene 1 — The Stop',
+    icon: '◉',
   },
 };
 

@@ -120,6 +120,53 @@ export default function Scene1_TheStop({ scenario }) {
             </p>
           </>
         }
+        citizen={
+          <>
+            <p>
+              The deputy runs Carlos's license through standard criminal databases. No warrants.
+              No flags. Clean record.
+            </p>
+            <p>
+              But this is a{' '}
+              <Tooltip term="287(g) Task Force agreement">
+                Under the Task Force Model, local deputies are trained and cross-designated by ICE
+                to query federal immigration databases and perform limited immigration enforcement
+                functions during their regular patrol activities — including routine traffic stops.
+              </Tooltip>{' '}
+              county. He enters Carlos's information into DHS IDENT.
+            </p>
+            <p>
+              The system returns:{' '}
+              <strong>U.S. Citizen. Naturalized 2018. Born: Mexico.</strong>
+            </p>
+            <p>
+              The stop has now run three minutes longer than it would have in a non-287(g) county.
+            </p>
+            <div className="flex justify-center my-4">
+              <StatCallout number="+3 min" label="Extended Stop Time" color="indigo" />
+            </div>
+            <p>The deputy returns to the window.</p>
+            <Dialogue speaker="Deputy">
+              Mr. Mendez — this says you're a naturalized citizen. You were born in Mexico?
+            </Dialogue>
+            <Dialogue speaker="Carlos">
+              Yes, sir. I became a citizen in 2018. I've lived here over twenty years.
+            </Dialogue>
+            <Dialogue speaker="Deputy">
+              Do you have your passport or naturalization certificate on you?
+            </Dialogue>
+            <Dialogue speaker="Carlos">No, sir. My license —</Dialogue>
+            <Dialogue speaker="Deputy">
+              That's fine. The system confirmed it. Here's your warning for the brake light.
+            </Dialogue>
+            <p>
+              Carlos takes the slip. The database confirmed he's a citizen. The deputy verified
+              the database by asking if he had documents the database had already provided. He's
+              lived in this county for twelve years. He has never had to confirm his citizenship
+              to a deputy before.
+            </p>
+          </>
+        }
       />
 
       <DatabaseQuery scenario={scenario} stage="stop" />

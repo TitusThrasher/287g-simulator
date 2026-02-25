@@ -74,6 +74,23 @@ export default function Scene3_TheArrest({ scenario }) {
             </p>
           </>
         }
+        citizen={
+          <>
+            <p>
+              In the patrol car, the deputy fills out the arrest report. The immigration field
+              reads:
+            </p>
+            <div className="my-3 p-3 bg-indigo-50 border border-indigo-200 rounded font-mono text-sm text-slate-700">
+              Immigration status, if known: <strong>U.S. Citizen (Naturalized 2018) — verified via DHS IDENT query at scene</strong>
+            </div>
+            <p>
+              Carlos stares out the window. The field is filled in. The database confirmed his
+              citizenship. He's still in the back of a patrol car, wrists cuffed, thinking about
+              Sofia's play — and about the fact that tonight, on a dark county road, a deputy
+              looked at his name and decided to check.
+            </p>
+          </>
+        }
       />
     </Scene>
   );

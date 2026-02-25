@@ -42,6 +42,13 @@ export default function Insight({ scenario }) {
                 Deputies can query immigration databases and contact ICE during routine encounters.
               </span>
             }
+            citizen={
+              <span>
+                The IDENT query ran. The stop ran three minutes longer. The deputy asked where
+                Carlos was born and requested documentation the database had already provided.
+                None of that required the database to return "LPR" to happen.
+              </span>
+            }
           />
         </div>
       </div>

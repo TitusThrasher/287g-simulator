@@ -27,6 +27,12 @@ export default function ProgressDots({ scenario }) {
       { num: 5, label: 'Detainer' },
       { num: 6, label: 'Hold' },
       { num: 7, label: 'Transfer' }
+    ],
+    citizen: [
+      { num: 1, label: 'Stop' },
+      { num: 2, label: 'Search' },
+      { num: 3, label: 'Arrest' },
+      { num: 4, label: 'Booking' }
     ]
   };
 
