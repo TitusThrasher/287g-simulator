@@ -5,6 +5,7 @@ import ScenarioContent from '../components/ScenarioContent';
 import DatabaseQuery from '../components/DatabaseQuery';
 import Insight from '../components/Insight';
 import StatCallout from '../components/StatCallout';
+import DivergenceSpotlight from '../components/DivergenceSpotlight';
 
 export default function Scene1_TheStop({ scenario }) {
 
@@ -29,6 +30,8 @@ export default function Scene1_TheStop({ scenario }) {
         Carlos passes over his documents. His driver's license. His registration. He keeps his
         hands visible on the wheel while the deputy walks back to the cruiser.
       </p>
+
+      <DivergenceSpotlight scenario={scenario} sceneNumber={1} />
 
       <ScenarioContent
         scenario={scenario}

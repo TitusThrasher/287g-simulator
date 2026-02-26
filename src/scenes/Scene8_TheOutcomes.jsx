@@ -139,10 +139,9 @@ export default function Scene8_TheOutcomes({ scenario }) {
               minutes. He went home the next morning, paid a fine, and made Sofia's play.
             </p>
             <p className="text-sm text-slate-400">
-              But in a Task Force county, "going home" required his citizenship to be verified
-              at a traffic stop — his birthplace confirmed by a deputy at 10 PM on a dark road,
-              his naturalization questioned after the system had already answered. The program
-              ran as designed. That's the question.
+              But in a county with a Task Force agreement, "going home" required his citizenship to be verified
+              at a traffic stop — his birthplace confirmed and ID run through multiple databases by a deputy at 10 PM on a dark side road.
+              The program ran as designed: his citizenship protected from detention, but Carlos still felt the weight of this invasive program and its impact on local policing.
             </p>
           </div>
         )}

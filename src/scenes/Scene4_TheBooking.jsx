@@ -2,6 +2,7 @@ import Scene from '../components/Scene';
 import Dialogue from '../components/Dialogue';
 import DatabaseQuery from '../components/DatabaseQuery';
 import StatCallout from '../components/StatCallout';
+import DivergenceSpotlight from '../components/DivergenceSpotlight';
 
 // Visual step-by-step flow replacing the "behind the counter" prose block.
 // Each scenario shows what actually happens to Carlos's records after booking.
@@ -191,6 +192,8 @@ export default function Scene4_TheBooking({ scenario }) {
       </p>
 
       <Dialogue speaker="Carlos">I'll be home soon. Don't worry. It's a mistake.</Dialogue>
+
+      <DivergenceSpotlight scenario={scenario} sceneNumber={4} />
 
       <div className="my-6 border-t border-slate-300 pt-6">
         <div className="text-sm uppercase tracking-wide text-slate-500 mb-4">

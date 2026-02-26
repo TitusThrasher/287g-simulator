@@ -6,6 +6,7 @@ export default function Scene({ number, title, time, elapsed, children, scenario
 
   return (
     <section
+      data-scene-number={number}
       className={`mb-8 p-6 rounded-xl border-2 ${config.borderColor} ${config.bgColor} transition-colors duration-300`}
     >
       <div className="flex items-center gap-3 mb-4">

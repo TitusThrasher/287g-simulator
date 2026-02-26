@@ -23,7 +23,14 @@ function App() {
   const [scenario, setScenario] = useState('none');
   const [showContentWarning, setShowContentWarning] = useState(true);
   const [hasSeenEnd, setHasSeenEnd] = useState(false);
+  const [currentScene, setCurrentScene] = useState(0);
   const endSentinelRef = useRef(null);
+
+  // Reset progress and switch scenario together so currentScene never lags a render
+  const handleSetScenario = (next) => {
+    setCurrentScene(0);
+    setScenario(next);
+  };
 
   // Unlock the citizen scenario tab once the user scrolls through the outcome section
   useEffect(() => {
@@ -37,6 +44,25 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  // Track which scene is currently in view — fills in ProgressDots as user scrolls
+  useEffect(() => {
+    const scenes = document.querySelectorAll('[data-scene-number]');
+    if (!scenes.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const num = parseInt(entry.target.dataset.sceneNumber, 10);
+            setCurrentScene(prev => Math.max(prev, num));
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    scenes.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, [scenario]);
+
   if (showContentWarning) {
     return <ContentWarning onContinue={() => setShowContentWarning(false)} />;
   }
@@ -44,7 +70,7 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Header />
-      <ScenarioSelector scenario={scenario} setScenario={setScenario} hasSeenEnd={hasSeenEnd} />
+      <ScenarioSelector scenario={scenario} setScenario={handleSetScenario} hasSeenEnd={hasSeenEnd} />
 
       <main className="max-w-3xl mx-auto px-4 py-8">
 
@@ -139,7 +165,7 @@ function App() {
         <ScenarioBriefing scenario={scenario} />
 
         {/* Progress indicator */}
-        <ProgressDots scenario={scenario} />
+        <ProgressDots scenario={scenario} currentScene={currentScene} />
 
         {/* All Scenes */}
         <Scene1_TheStop scenario={scenario} />
